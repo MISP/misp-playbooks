@@ -1,0 +1,39 @@
+name: New MISP playbook proposal
+description: Propose a new MISP playbook
+labels: ["playbook:state=proposal", "needs triage"]
+assignees: cudeso
+body:
+  - type: input
+    id: metadata_title
+    attributes:
+      label: The title of the playbook
+      placeholder: Provide a meaningful title for the playbook
+    validations:
+      required: true
+  - type: textarea
+    id: metadata_purpose
+    attributes:
+      label: Purpose of the playbook
+      description: A clear and concise description of the purpose of the playbook
+      placeholder: Purpose of the playbook
+    validations:
+      required: true
+  - type: textarea
+    id: metadata_externalresources
+    attributes:
+      label: External resources used by this playbook
+      description: List the external resoures used by this playbook
+      placeholder: External resources (such as 'VirusTotal', 'Shodan') required by the playbook
+    validations:
+      required: false
+  - type: textarea
+    id: metadata_targetaudience
+    attributes:
+      label: Target audience
+      description: Describe the intended users or target audience of the playbook;
+    validations:
+      required: false
+  - type: textarea
+    id: execution_steps
+    attributes:
+      label: Breefly list the execution steps or workflow
