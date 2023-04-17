@@ -1,0 +1,14 @@
+[Unit]
+Description=MISP Playbooks - Jupyter
+
+[Service]
+Type=simple
+User=playbook
+Group=playbook
+PIDFile=/run/misp-playbook-jupyter.pid
+ExecStart=/home/playbook/misp-playbooks/playbook/bin/jupyter-lab --config=/home/playbook/misp-playbooks/playbook/config/misp-playbook-jupyter.py
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target
