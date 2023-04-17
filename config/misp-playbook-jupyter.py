@@ -7,6 +7,6 @@ c.ServerApp.allow_password_change = False
 c.ContentsManager.untitled_notebook = "MISP Untitled Playbook"
 
 
-c.ServerApp.root_dir = "/home/playbook/misp-playbooks/playbook/notebooks/"
-c.ServerApp.certfile = "/home/playbook/misp-playbooks/playbook/config/playbook-ssl.pem"
-c.ServerApp.keyfile = "/home/playbook/misp-playbooks/playbook/config/playbook-ssl.key"
+c.ServerApp.root_dir = "/home/playbook/misp-playbooks/playbooks/my-playbooks/"
+c.ServerApp.certfile = "/home/playbook/misp-playbooks/playbooks/config/playbook-ssl.pem"
+c.ServerApp.keyfile = "/home/playbook/misp-playbooks/playbooks/config/playbook-ssl.key"

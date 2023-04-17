@@ -17,17 +17,11 @@
   - [Browser access](#browser-access)
 - [MISP](#misp)
   - [Authentication key](#authentication-key)
+- [MISP playbooks from the GitHub repository](#misp-playbooks-from-the-github-repository)
+  - [Copy the MISP playbooks](#copy-the-misp-playbooks)
+  - [Install the libraries for MISP playbooks](#install-the-libraries-for-misp-playbooks)
+  - [Directory layout](#directory-layout)
 - [Resources](#resources)
-
-
-**CHECK**
-**CHECK**
-**CHECK**
-overal "playbook" ipv "notebook" (in Python VENV)
-
-
-extensions manager
-
 
 # MISP playbooks - technical documentation
 
@@ -98,11 +92,18 @@ cd misp-playbooks
 
 ### Virtual environment 
 
-All the playbooks are executed from a **Python virtual environment**. This allows you to have multiple versions of Python libraries installed, independent of those already provided by your Linux system or other installed projects. In this case we create the virtual environment (called `playbook`) and activate this environment. 
+All the playbooks are executed from a **Python virtual environment**. This allows you to have multiple versions of Python libraries installed, independent of those already provided by your Linux system or other installed projects. In this case we create the virtual environment (called `playbooks`) and activate this environment. 
 
 ```
-virtualenv -p /usr/bin/python3 playbook
-source playbook/bin/activate
+python3 -m venv playbooks
+source playbooks/bin/activate
+```
+
+If have virtualenv installed, you can also use 
+
+```
+virtualenv -p /usr/bin/python3 playbooks
+source playbooks/bin/activate
 ```
 
 ### Install Python libraries
@@ -120,9 +121,9 @@ pip install pymisp jupyterlab
 The MISP playbook repository contains a basic Jupyter configuration file that you can use as a start to configure your environment. Create a configuration directory, copy the configuration file [config/misp-playbook-jupyter.py](../config/misp-playbook-jupyter.py) and create a directory for your notebooks.
 
 ```
-mkdir playbook/config
-cp config/misp-playbook-jupyter.py playbook/config/misp-playbook-jupyter.py
-mkdir playbook/notebooks
+mkdir playbooks/config
+cp config/misp-playbook-jupyter.py playbooks/config/misp-playbook-jupyter.py
+mkdir playbooks/my-playbooks
 ```
 
 ### SSL
@@ -130,7 +131,7 @@ mkdir playbook/notebooks
 It is a good idea to use SSL to encrypt the communication between your client (web browser) and JupyterLab. Create a self-signed certificate or use a valid certificate from services such as [Let’s Encrypt](https://letsencrypt.org/).
 
 ```
-openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout playbook/config/playbook-ssl.key -out playbook/config/playbook-ssl.pem
+openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout playbooks/config/playbook-ssl.key -out playbooks/config/playbook-ssl.pem
 ```
 
 In case you created a self-signed certificate, it's advised to provide your system FQDN (for example `notebook.misp.local`) as the 'Common Name'.
@@ -140,7 +141,7 @@ In case you created a self-signed certificate, it's advised to provide your syst
 Protect the access to your notebooks with a password. The MISP playbook repository contains a helper script that asks for a password and stores the hash in a configuration file with the variable `ServerApp.password`. Start the script [tools/misp-playbook-jupyter.py](../tools/misp-playbook-jupyter.py) from the Python virtual environment and provide it the earlier created configuration file.
 
 ```
-python tools/set_notebook_password.py playbook/config/misp-playbook-jupyter.py
+python tools/set_notebook_password.py playbooks/config/misp-playbook-jupyter.py
 ```
 
 ### Configuration check
@@ -148,9 +149,9 @@ python tools/set_notebook_password.py playbook/config/misp-playbook-jupyter.py
 Review the configuration file `playbook/config/misp-playbook-jupyter.py` . Pay attention to the path used for **root_dir**, **certfile** and **keyfile**. 
 
 ```
-c.ServerApp.root_dir = "/home/playbook/misp-playbooks/playbook/notebooks/"
-c.ServerApp.certfile = "/home/playbook/misp-playbooks/playbook/config/playbook-ssl.pem"
-c.ServerApp.keyfile = "/home/playbook/misp-playbooks/playbook/config/playbook-ssl.key"
+c.ServerApp.root_dir = "/home/playbook/misp-playbooks/playbooks/my-playbooks/"
+c.ServerApp.certfile = "/home/playbook/misp-playbooks/playbooks/config/playbook-ssl.pem"
+c.ServerApp.keyfile = "/home/playbook/misp-playbooks/playbooks/config/playbook-ssl.key"
 ```
 
 ## Systemd startup script
@@ -196,7 +197,7 @@ When you enter the password you should be greeted with the JupyterLab web interf
 The playbooks require a MISP API key and they will typically load the credential information from a `keys.py` file stored in the `vault` directory. First create the vault directory in your Python virtual environment (most likely `playbook`) and add a keys.py file.
 
 ```
-mkdir vault
+mkdir playbooks/vault
 ```
 
 Contents of `keys.py`
@@ -210,6 +211,51 @@ You can create a new MISP API key via the MISP web interface by navigating to **
 
 - Add this key to keys.py (in `misp_key`)
 - Update the MISP URL (in `misp_url`)
+
+# MISP playbooks from the GitHub repository
+
+## Copy the MISP playbooks
+
+The MISP playbooks included in this repository are in the folder `misp-playbooks`. Copy these playbooks into your working directory.
+
+Either you can choose to copy them in a separate directory in your playbooks directory, or copy them directly into your playbooks directory.
+
+To copy them directly into your playbooks directory : 
+
+```
+cp -rp misp-playbooks/* playbooks/my-playbooks/
+```
+
+To copy them into a separate directory `misp-playbooks` :
+```
+cp -rp misp-playbooks playbooks/my-playbooks/
+```
+If you copied them into a separate directory then update the reference to the vault in the MISP playbooks. Instead of `sys.path.insert(0, "../vault/")`, you will have to use `../../vault/`.
+
+## Install the libraries for MISP playbooks
+
+Some MISP playbooks require additional Python libraries. You can install them with pip.
+
+```
+pip install -r documentation/requirements.txt
+```
+
+## Directory layout
+
+```
+misp-playbooks:     GitHub repository
+\
+| misp-playbooks:   MISP playbooks in this repository
+| config:           Default configuration files
+| documentation:    Documentation
+| tools:            Support tools
+| playbooks:        YOUR playbooks environment
+\ 
+    venv:           Python virtual environment
+    vault:          Vault with keys file
+    config:         Local configuration file
+    my-playbooks:   YOUR playbooks
+```    
 
 # Resources
 
