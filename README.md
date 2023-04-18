@@ -41,6 +41,12 @@ The repository contains these playbooks
 - Target audience: **SOC, CSIRT**
 ![assets/../documentation/assets/playbook-create_update_misp_event_on_phishing_with_link.png](assets/../documentation/assets/playbook-create_update_misp_event_on_phishing_with_link.png)
 
+
+**Skeleton MISP playbook**
+- [MISP Playbook](misp-playbooks/pb_skeleton.ipynb)
+- This playbook can be used as a skeleton (or **template**) to start new MISP playbooks.
+- Follow the [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.md) to create a new MISP playbook.
+  
 ## Requesting new playbooks
 
 If you identify a missing playbook then submit a [New MISP playbook proposal](https://github.com/MISP/misp-playbooks/issues) via the GitHub issue tracker.
