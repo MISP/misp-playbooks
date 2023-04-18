@@ -32,8 +32,8 @@ The repository contains these playbooks
 
 
 **Create or update a MISP event with information from a phishing incident with a link**
-- [MISP Playbook]() started from [issue 1](https://github.com/MISP/misp-playbooks/issues/1)
-- - Use the [MISP Playbook with output]() to view the output of the notebook (with additional images)
+- [MISP Playbook](misp-playbooks/pb_create_or_update_a_MISP_event_with_information_from_a_phishing_incident_with_a_link.ipynb) started from [issue 1](https://github.com/MISP/misp-playbooks/issues/1)
+- - Use the [MISP Playbook with output](misp-playbooks/pb_create_or_update_a_MISP_event_with_information_from_a_phishing_incident_with_a_link-with_output.ipynb) to view the output of the notebook (with additional images)
 - This playbook creates a new MISP event or completes an existing MISP event with details of a **phishing incident**.
 - - The playbook is *triggered* during the investigation of a phishing security incident. The playbook requires the phishing indicators such as the **links**, e-mail body, e-mail **headers**, e-mail **subject** and **senders** as *input*. It will then encode these values as attributes and objects in a MISP event. The playbook creates relationships between the objects and sets default tags (PAP, course-of-action matrix) and MISP clusters on event and attributes (*contextualisation*).
 - - The playbook queries (local) MISP events and OSINT feeds for matches with the indicators. You can use this information for *correlation*. URLscan is queried for the links included in the e-mail. The historical scan results and screenshots are imported in the playbook and MISP. Next to the *enrichment* via the scan results, the query at URLscan also provides IP and ASN information of the location where the URL is hosted. The URLs are submitted to Lookyloo for further analysis. The phishing URLs are also reported (manually) to Google, Microsoft and Phishtank. 
