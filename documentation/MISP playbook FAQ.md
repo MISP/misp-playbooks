@@ -11,6 +11,8 @@
   - [I want to change my password or I have forgotten my password.](#i-want-to-change-my-password-or-i-have-forgotten-my-password)
   - [I get the message "Could not determine jupyterlab build status without nodejs"](#i-get-the-message-could-not-determine-jupyterlab-build-status-without-nodejs)
   - [I want to add an additional Python library](#i-want-to-add-an-additional-python-library)
+- [MISP playbooks on GitHub - FAQ](#misp-playbooks-on-github---faq)
+  - [I don't see the images in my playbook!](#i-dont-see-the-images-in-my-playbook)
 
 
 # MISP playbooks - FAQ
@@ -97,3 +99,13 @@ pip install <mylibrary>
 
 sudo systemctl restart misp-playbook-jupyter.service
 ```
+
+# MISP playbooks on GitHub - FAQ
+
+## I don't see the images in my playbook!
+
+If your GitHub repository is set to **private** then the images will not show up in your uploaded playbooks. 
+
+In order to display the images when browsing the playbooks via GitHub the repository needs to be put publicly accessible.
+
+Note that on initial tests, this is **not** the case with GitLab. A private repository in GitLab can display the images.

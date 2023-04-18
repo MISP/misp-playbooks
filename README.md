@@ -21,8 +21,8 @@ The repository contains these playbooks
 
 **Create MISP objects and relationships**
 
-- [MISP Playbook]() started from [issue 11](https://github.com/MISP/misp-playbooks/issues/11)
-- - Use the [MISP Playbook with output]() to get a view on the produced output
+- [MISP Playbook](misp-playbooks/pb_create_MISP_objects_and_relationship.ipynb) started from [issue 11](https://github.com/MISP/misp-playbooks/issues/11)
+- - Use the [MISP Playbook with output](misp-playbooks/pb_create_MISP_objects_and_relationship-with_output.ipynb) to view the output of the notebook (with additional images)
 - This playbook walks the analyst through the phases of creating MISP objects and adding a relationship between these objects. 
 - - The playbook is typically *triggered* when an an analyst wants to add related, contextually linked, attributes to a MISP event.
 - - The objects are added to a new or an existing MISP event. The playbook prints out a summary that can be used to notify colleagues via Mattermost or other channels.
@@ -33,7 +33,7 @@ The repository contains these playbooks
 
 **Create or update a MISP event with information from a phishing incident with a link**
 - [MISP Playbook]() started from [issue 1](https://github.com/MISP/misp-playbooks/issues/1)
-- - Use the [MISP Playbook with output]() to get a view on the produced output
+- - Use the [MISP Playbook with output]() to view the output of the notebook (with additional images)
 - This playbook creates a new MISP event or completes an existing MISP event with details of a **phishing incident**.
 - - The playbook is *triggered* during the investigation of a phishing security incident. The playbook requires the phishing indicators such as the **links**, e-mail body, e-mail **headers**, e-mail **subject** and **senders** as *input*. It will then encode these values as attributes and objects in a MISP event. The playbook creates relationships between the objects and sets default tags (PAP, course-of-action matrix) and MISP clusters on event and attributes (*contextualisation*).
 - - The playbook queries (local) MISP events and OSINT feeds for matches with the indicators. You can use this information for *correlation*. URLscan is queried for the links included in the e-mail. The historical scan results and screenshots are imported in the playbook and MISP. Next to the *enrichment* via the scan results, the query at URLscan also provides IP and ASN information of the location where the URL is hosted. The URLs are submitted to Lookyloo for further analysis. The phishing URLs are also reported (manually) to Google, Microsoft and Phishtank. 

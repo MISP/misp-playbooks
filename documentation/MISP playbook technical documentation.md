@@ -224,6 +224,8 @@ To copy them directly into your playbooks directory :
 
 ```
 cp -rp misp-playbooks/* playbooks/my-playbooks/
+mkdir playbooks/my-playbooks/helpers
+cp -rp misp-playbooks/helpers/* playbooks/my-playbooks/helpers/
 ```
 
 To copy them into a separate directory `misp-playbooks` :
@@ -246,15 +248,19 @@ pip install -r documentation/requirements.txt
 misp-playbooks:     GitHub repository
 \
 | misp-playbooks:   MISP playbooks in this repository
+  \ 
+  | helpers:       Helper files for the playbook (such as images)
 | config:           Default configuration files
 | documentation:    Documentation
 | tools:            Support tools
 | playbooks:        YOUR playbooks environment
-\ 
-    venv:           Python virtual environment
-    vault:          Vault with keys file
-    config:         Local configuration file
-    my-playbooks:   YOUR playbooks
+  \ 
+  | venv:           Python virtual environment
+  | vault:          Vault with keys file
+  | config:         Local configuration file
+  | my-playbooks:   YOUR playbooks
+    \
+    | helpers:       Helper files for the playbook (such as images)
 ```    
 
 # Resources
