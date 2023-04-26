@@ -19,6 +19,15 @@ This repository contains the documentation to get started with MISP playbooks.
 
 The repository contains these playbooks
 
+**Create a custom MISP warninglist**
+
+- [MISP Playbook](misp-playbooks/pb_create_custom_MISP_warninglist.ipynb) started from [issue 7](https://github.com/MISP/misp-playbooks/issues/7)
+- - Use the [MISP Playbook with output](misp-playbooks/pb_create_custom_MISP_warninglist-with_output.ipynb) to view the output of the notebook (with additional images)
+-  This playbook creates a custom MISP warninglist with a set of entries provided by the analyst as input. A check is done if the warninglist already exists. If the warninglist already exists then the entries are added to the existing warninglist. When the warninglist is created the MISP events are queried for matches ('retro-search').
+- - The playbook also queries Shodan and VirusTotal for matches with entries in the warninglist. The result of the creation of the warninglist as well as the matches is summarised at the end of the playbook and sent to Mattermost or Slack or added as an alert in TheHive.
+- Target audience: **SOC, CSIRT, CTI**
+![assets/../documentation/assets/playbook-create_custom_MISP_warninglist.png](assets/../documentation/assets/playbook-create_custom_MISP_warninglist.png)
+
 **Create MISP objects and relationships**
 
 - [MISP Playbook](misp-playbooks/pb_create_MISP_objects_and_relationship.ipynb) started from [issue 11](https://github.com/MISP/misp-playbooks/issues/11)
