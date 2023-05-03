@@ -19,6 +19,15 @@ This repository contains the documentation to get started with MISP playbooks.
 
 The repository contains these playbooks
 
+**Query domain reputation**
+
+- [MISP Playbook](misp-playbooks/pb_query_domain_reputation.ipynb) started from [issue 13](https://github.com/MISP/misp-playbooks/issues/13)
+- - Use the [MISP Playbook with output](misp-playbooks/pb_query_domain_reputation-with_output.ipynb) to view the output of the notebook (with additional images)
+-  This playbook queries the enabled OSINT feeds and the local MISP events for matches with one or more domain name(s).
+The playbook also queries URLscan for historical scans related to the domains and extracts the screenshots from URLscan. The playbook then uses the MISP modules to look up the DNS resolutions and queries VirusTotal, Shodan and URLhaus for information related to the domains. You can also specify additional entries (indicators or elements to be used for querying these sources).
+- Target audience: **SOC, CSIRT, CTI**
+![assets/../documentation/assets/playbook-query_domain_reputation.png](assets/../documentation/assets/playbook-query_domain_reputation.png)
+
 **Create a custom MISP warninglist**
 
 - [MISP Playbook](misp-playbooks/pb_create_custom_MISP_warninglist.ipynb) started from [issue 7](https://github.com/MISP/misp-playbooks/issues/7)
