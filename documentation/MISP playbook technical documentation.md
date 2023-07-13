@@ -111,7 +111,7 @@ source playbooks/bin/activate
 Next install the Python libraries PyMISP and JupyterLab.
 
 ```
-pip install pymisp jupyterlab
+pip install pymisp jupyterlab notebook
 ```
 
 ## Setup
@@ -146,7 +146,7 @@ python tools/set_notebook_password.py playbooks/config/misp-playbook-jupyter.py
 
 ### Configuration check
 
-Review the configuration file `playbook/config/misp-playbook-jupyter.py` . Pay attention to the path used for **root_dir**, **certfile** and **keyfile**. 
+Review the configuration file `playbooks/config/misp-playbook-jupyter.py` . Pay attention to the path used for **root_dir**, **certfile** and **keyfile**. 
 
 ```
 c.ServerApp.root_dir = "/home/playbook/misp-playbooks/playbooks/my-playbooks/"
