@@ -61,7 +61,7 @@ The playbook also queries URLscan for historical scans related to the domains an
 
 **Using timestamps in MISP**
 - [MISP Playbook](misp-playbooks/pb_using_timestamps_in_MISP.ipynb) started from [issue 42](https://github.com/MISP/misp-playbooks/issues/42)
-- - Use the [MISP Playbook with output](misp-playbooks/pb_using_timestamps_in_MISP.ipynb) to view the output of the notebook
+- - Use the [MISP Playbook with output](misp-playbooks/pb_using_timestamps_in_MISP-with_output.ipynb) to view the output of the notebook
 - A playbook that documents the different timestamps that are used in MISP.
   - Go through the timestamp for publishing and last changes as well as how these can be used in search queries.
   - Document what changes a timestamp in a MISP event.
