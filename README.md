@@ -19,6 +19,17 @@ This repository contains the documentation to get started with MISP playbooks.
 
 The repository contains these playbooks
 
+**Query CVE information**
+
+- [MISP Playbook](misp-playbooks/pb_query_cve_information-with_output.ipynb) started from [issue 25](https://github.com/MISP/misp-playbooks/issues/25)
+- - Use the [MISP Playbook with output](misp-playbooks/pb_query_cve_information-with_output.ipynb) to view the output of the notebook (with additional images)
+- This playbook queries the MISP events for the use of specific CVEs. It lists the events with the context (galaxies) that are attached to the event.
+  - The playbook queries public sources (CVE search, vulners, XForceExchange, exploitdb) for additional CVE information.
+  - The results are stored in the playbook, in a MISP event and sent to Mattermost and TheHive.
+
+- Target audience: **SOC, CSIRT, CTI**
+![assets/../documentation/assets/playbook-query_cve_information.png](assets/../documentation/assets/playbook-query_cve_information.png)
+
 **Query domain reputation**
 
 - [MISP Playbook](misp-playbooks/pb_query_domain_reputation.ipynb) started from [issue 13](https://github.com/MISP/misp-playbooks/issues/13)
