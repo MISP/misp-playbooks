@@ -4,3 +4,5 @@ PrettyTable
 ipywidgets
 pylookyloo
 mattermostdriver
+attackcti
+pymisp
