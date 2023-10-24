@@ -6,3 +6,4 @@ pylookyloo
 mattermostdriver
 attackcti
 pymisp
+abuse_finder

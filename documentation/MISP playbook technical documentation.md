@@ -138,7 +138,7 @@ In case you created a self-signed certificate, it's advised to provide your syst
 
 ### Password protect notebooks
 
-Protect the access to your notebooks with a password. The MISP playbook repository contains a helper script that asks for a password and stores the hash in a configuration file with the variable `ServerApp.password`. Start the script [tools/misp-playbook-jupyter.py](../tools/misp-playbook-jupyter.py) from the Python virtual environment and provide it the earlier created configuration file.
+Protect the access to your notebooks with a password. The MISP playbook repository contains a helper script that asks for a password and stores the hash in a configuration file with the variable `ServerApp.password`. Start the script [tools/set_notebook_password.py](../tools/set_notebook_password.py) from the Python virtual environment and provide it the earlier created configuration file.
 
 ```
 python tools/set_notebook_password.py playbooks/config/misp-playbook-jupyter.py
@@ -224,15 +224,9 @@ To copy them directly into your playbooks directory :
 
 ```
 cp -rp misp-playbooks/* playbooks/my-playbooks/
-mkdir playbooks/my-playbooks/helpers
-cp -rp misp-playbooks/helpers/* playbooks/my-playbooks/helpers/
 ```
 
-To copy them into a separate directory `misp-playbooks` :
-```
-cp -rp misp-playbooks playbooks/my-playbooks/
-```
-If you copied them into a separate directory then update the reference to the vault in the MISP playbooks. Instead of `sys.path.insert(0, "../vault/")`, you will have to use `../../vault/`.
+*If you copied them into a separate directory then update the reference to the vault in the MISP playbooks. Instead of `sys.path.insert(0, "../vault/")`, you will have to use `../../vault/`.*
 
 ## Install the libraries for MISP playbooks
 

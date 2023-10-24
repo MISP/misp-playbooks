@@ -1,6 +1,7 @@
 import sys
 import os
-from notebook.auth import passwd
+#from notebook.auth import passwd
+from jupyter_server.auth import passwd
 
 config_file = sys.argv[1]
 
