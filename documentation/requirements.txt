@@ -7,3 +7,7 @@ mattermostdriver
 attackcti
 pymisp
 abuse_finder
+mwdblib
+pefile
+json
+uuid
