@@ -11,3 +11,4 @@ mwdblib
 pefile
 json
 uuid
+folium
