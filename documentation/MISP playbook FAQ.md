@@ -11,6 +11,8 @@
   - [I want to change my password or I have forgotten my password.](#i-want-to-change-my-password-or-i-have-forgotten-my-password)
   - [I get the message "Could not determine jupyterlab build status without nodejs"](#i-get-the-message-could-not-determine-jupyterlab-build-status-without-nodejs)
   - [I want to add an additional Python library](#i-want-to-add-an-additional-python-library)
+- [Python libraries - FAQ](#python-libraries---faq)
+  - [How do I update the list of required Python libraries to run all playbooks](#how-do-i-update-the-list-of-required-python-libraries-to-run-all-playbooks)
 - [MISP playbooks on GitHub - FAQ](#misp-playbooks-on-github---faq)
   - [I don't see the images in my playbook!](#i-dont-see-the-images-in-my-playbook)
 
@@ -99,6 +101,18 @@ pip install <mylibrary>
 
 sudo systemctl restart misp-playbook-jupyter.service
 ```
+
+# Python libraries - FAQ
+
+## How do I update the list of required Python libraries to run all playbooks
+
+The Python requirements are in the `requirements.txt` file. You need to update your Python virtual environment. This can be easily done with (adjust the path to your installation details)
+
+```
+playbooks/bin/pip install -r documentation/requirements.txt --upgrade
+```
+
+You do not need to restart Jupyter notebook.
 
 # MISP playbooks on GitHub - FAQ
 

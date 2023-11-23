@@ -9,6 +9,5 @@ pymisp
 abuse_finder
 mwdblib
 pefile
-json
 uuid
 folium
