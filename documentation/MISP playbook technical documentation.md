@@ -261,4 +261,5 @@ misp-playbooks:     GitHub repository
 
 - https://jupyterlab.readthedocs.io/en/stable/
 - https://jupyter.org/install
+- [Running Python Jupyter Notebooks Using Live VM](https://www.educative.io/courses/author-guide/JPlVyD0wK62)
 
