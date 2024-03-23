@@ -1,0 +1,364 @@
+[
+    {
+        "description": "Create a custom MISP warninglist",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "warninglist",
+            "hunting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_custom_MISP_warninglist.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "1c946ff3-0798-4c59-a19e-fc0b622e75e3",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/7",
+        "purpose": "This playbook creates a custom MISP warninglist with a set of entries provided by the analyst as input. A check is done if the warninglist already exists. If the warninglist already exists then the entries are added to the existing warninglist. When the warninglist is created the MISP events are queried for matches ('retro-search'). The playbook also queries Shodan and VirusTotal for matches with entries in the warninglist. The result of the creation of the warninglist as well as the matches is summarised at the end of the playbook and sent to Mattermost or Slack or added as an alert in TheHive."
+    },
+    {
+        "description": "Using timestamps in MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "timestamp",
+            "export"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_using_timestamps_in_MISP.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "7b498d8f-d1a3-4576-b894-58f908fff82c",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/42",
+        "purpose": "A playbook that documents the different timestamps that are used in MISP. Go through the timestamp for publishing and last changes as well as how these can be used in search queries. Document what changes a timestamp in a MISP event."
+    },
+    {
+        "description": "Curation: disable decayed indicators",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "curation",
+            "workflow",
+            "todo",
+            "qa",
+            "quality",
+            "audit",
+            "decaying",
+            "indicators",
+            "lifecycle"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_curate_disable_decayed_indicators.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "4676fe7c-6811-4df6-b591-b3f494846a52",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/30",
+        "purpose": "This playbook disables decayed indicators. It uses a custom decaying model defined in this playbook but can also rely on the MISP build-in models. When an indicator is considered decayed, the `to_ids` flag is set to False and the attribute is tagged. The build-in decaying feature of MISP adds a (decay) score to an indicator but does not automatically disable it. This playbook allows you to do just that. The playbook can exclude or include attributes that are tagged with specific labels. Use this MISP playbook together with the (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_curate_misp_events.ipynb) and (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_query_for_inconsistencies_misp_events.ipynb) playbook for optimal threat intelligence curation result. The results are summarised at the end of the playbook and shared with Mattermost."
+    },
+    {
+        "description": "Retroscan with a MISP warninglist",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "warninglist",
+            "hunting",
+            "false-positives",
+            "indicator-quality",
+            "curation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_retroscan_with_MISP_warninglist.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "9469c0d5-2d79-4c2e-8727-fa9321411e92",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/8",
+        "purpose": "This playbook does a retroscan to check for attributes matching the values in a warninglist. You can then disable the to_ids flag or add a tag or comment. This playbook acts as a retroscan for threat intelligence curation when you add for example a new warninglist to MISP. The results are summarised and sent to Mattermost and TheHive. Also have a look at \"(https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_create_custom_MISP_warninglist.ipynb)\" for ways to create or edit warninglists via MISP playbooks."
+    },
+    {
+        "description": "Query CVE information",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "cve",
+            "vulnerability",
+            "exploits"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_cve_information.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "efda7766-78f6-4444-8072-beac92eaae97",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/25",
+        "purpose": "This playbook queries the MISP events for the use of specific CVEs. It lists the events with the context (galaxies) that are attached to the event. The playbook queries public sources (CVE search, vulners, XForceExchange, exploitdb) for additional CVE information. The results are stored in the playbook, in a MISP event and sent to Mattermost and TheHive."
+    },
+    {
+        "description": "Malware triage with MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "malware",
+            "triage",
+            "incidentresponse",
+            "ir",
+            "dfir"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_malware_triage.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "68b42f4d-8d5e-46c4-97f8-b87b9df210a3",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/2",
+        "purpose": "A playbook to provide an analyst sufficient information to do basic malware triage on one or more samples. This playbook creates a MISP event for malware triage. Samples are attached to a MISP event (with file object relations). VirusTotal and MalwareBazaar are used to get the detection rate, threat classification and sandbox information. Hashlookup is used to check for known hashes. PEfile analysis is done for imports and exports. The results are stored in MISP reports and as MISP objects where relevant. Correlations with MISP events or data feeds are added to a summary. The sample is shared with a local instance of MWDBcore. The summary is then sent to Mattermost."
+    },
+    {
+        "description": "Query hash information",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "hash",
+            "reputation",
+            "abuse",
+            "sample",
+            "file",
+            "malware"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_hash_information.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "9b9f655d-100d-490e-b3b3-ec24cf5526bd",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/15",
+        "purpose": "This playbook is complementary to the playbooks for (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_malware_triage.ipynb) and (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_malware_triage_upload_sample.ipynb) and investigates file hashes. It checks if the hashes are found on MISP warninglists, in MISP events or in MISP feeds. Uses the information from VirusTotal, Hashlookup and MalwareBazaar to provide context information on hashes. It creates a MISP report for each hash. Run this playbook if you do not have the sample and have to work with only the hash."
+    },
+    {
+        "description": "Query IP reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "ip",
+            "reputation",
+            "abuse",
+            "whois"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_ip_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "39a029be-e4d7-40da-88b2-1d0bf9417ad0",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/12",
+        "purpose": "A playbook to query for the reputation of one or more IPs. It combines the reputation scores from VirusTotal, Shodan, Greynoise and AbuseIPDB into one MISP report. The playbook adds the known associated domains, the abuse contacts and the geo information from MMDB. All information is added to a MISP event, summarised and send to Mattermost and TheHive."
+    },
+    {
+        "description": "Malware triage with MISP - Dynamic malware analysis",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "malware",
+            "triage",
+            "sandbox",
+            "incidentresponse",
+            "ir",
+            "dfir"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_malware_triage_upload_sample.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "8bada769-763a-46c3-a9b2-6b4808a47d36",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/3",
+        "purpose": "This playbook extends the results retrieved with static malware analysis in the (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_malware_triage.ipynb) playbook and does the dynamic malware analysis with one or more malware sandboxes. The results are stored in a MISP report and sent to Mattermost."
+    },
+    {
+        "description": "Query for inconsistencies in MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "distribution",
+            "data protection",
+            "curation",
+            "inconsistencies",
+            "qa",
+            "quality",
+            "audit"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_for_inconsistencies_misp_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "83e49ad8-6a8e-4317-b689-4154084dfe82",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/22",
+        "purpose": "This playbook checks for inconsistencies in the event distribution, the TLP designation and the PAP marking. The playbook also verifies if events contain sufficient attributes, objects, tags or galaxies. There are also checks for inconsistencies with the workflow tags, a taxonomy that is often used during threat intelligence curation. The results are listed in the playbook and sent to Mattermost. Note that MISP has also built-in checks encoded in (https://github.com/MISP/MISP/blob/2.4/app/Lib/EventWarning/DefaultWarning.php)"
+    },
+    {
+        "description": "Threat Actor profiling",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "mitre",
+            "actor",
+            "intrusion-set",
+            "galaxies",
+            "clusters",
+            "contextualisation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_threat_actor_profiling.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "bf0d86c4-b795-48a7-a3a9-e625620d1726",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/26",
+        "purpose": "This playbook queries MISP events associated with a specific threat actor. The playbook summaries the galaxies, clusters and tags from the MISP events, lists the vulnerabilities (CVE) and the actionable indicators. Optionally the playbook queries the MITRE TAXII server to get a list of associated techniques and software. The result of the playbook is a profile on a threat actor based on the MISP events. The results are stored in the playbook and sent to Mattermost and as an alert in TheHive."
+    },
+    {
+        "description": "Curate MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "curation",
+            "workflow",
+            "todo",
+            "qa",
+            "quality",
+            "audit"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_curate_misp_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "4c4d34f7-8628-410e-b41d-712061020e0c",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/21",
+        "purpose": "This playbook queries for MISP events that require curation and addresses the remaining curation tasks. In general you run this playbook after your automatic or manual curation process has highlighted the events that require a review but you can also force the playbook to curate all events. This playbook uses the hashlookup and mmdb_lookup MISP modules. This playbook searches for events with `workflow:state=incomplete`. If you force curation (`curation_always_do_curation_tasks`) then all curation tasks are executed. Otherwise, The playbook processes only the curation tasks (`workflow:todo`) attached ('tagged') to an event. After curation the state is changed to `workflow:state=complete` and the event is published. The curation includes Disable to_ids for attributes matching a warninglist, except for URLs or hostnames where a manual review is necessary Disable to_ids for attributes matching known software (via hashlookup) Add a GalaxyCluster with the location of an IP (via mmdb_lookup) Add TTPs based on string matches in the event title Tag attributes that are in MISP feeds (for easyr filtering afterwards) Use this MISP playbook together with the (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_query_for_inconsistencies_misp_events.ipynb) playbook for optimal threat intelligence curation result. The results are summarised at the end of the playbook and shared with Mattermost."
+    },
+    {
+        "description": "Provision users and organisations",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "users",
+            "organisations",
+            "training",
+            "provisioning"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_provision_users_organisations.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "078ac11a-d0d9-4beb-aec7-067735ce6bed",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/43",
+        "purpose": "This playbook creates users and organisations with PyMISP. It also shows how to reset a password and delete or disable users. It includes an example how to get the user logs and how to create large number of users at once. For this playbook your MISP API key needs to be associated with a user that is a site admin."
+    },
+    {
+        "description": "Create MISP objects and relationships",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "objects",
+            "context"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_MISP_objects_and_relationship.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "c0f920a6-37e1-47bb-92b8-1491dc710d39",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/11",
+        "purpose": "This playbook walks the analyst through the phases of creating MISP objects and adding a relationship between these objects. The playbook is typically triggered when an an analyst wants to add related, contextually linked, attributes to a MISP event.The objects are added to a new or an existing MISP event. The playbook prints out a summary that can be used to notify colleagues via Mattermost or other channels.The playbook uses an Emotet sample to demonstrate the functionality, with links from a file object to URL and HTTP request objects. It also creates the victim objects."
+    },
+    {
+        "description": "Bulk delete MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "delete",
+            "clean",
+            "curation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_bulk_delete_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "7d3fd7fe-fe4b-48a3-8e7e-8bd4e4bf2f0d",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/29",
+        "purpose": "A playbook to assist MISP users in doing bulk deletes of MISP events. Deletes are done for events created by organisations, for events before or after specific dates, published or unpublished events or for events with specific tags. A summary of the actions is printed and published on Mattermost."
+    },
+    {
+        "description": "Query domain reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "domain",
+            "reputation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_domain_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "e0af39c0-095b-4c31-9e42-2a731928c2a1",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/13",
+        "purpose": "This playbook queries the enabled OSINT feeds and the local MISP events for matches with one or more domain name(s). The playbook also queries URLscan for historical scans related to the domains and extracts the screenshots from URLscan. The playbook then uses the MISP modules to look up the DNS resolutions and queries VirusTotal, Shodan and URLhaus for information related to the domains. You can also specify additional entries (indicators or elements to be used for querying these sources). The playbook also looks up the known abuse contacts via abuse_finder. All this information is then included in a summary and send to Mattermost and TheHive."
+    },
+    {
+        "description": "Playbook title",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "tags"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_skeleton.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "UUID",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/13",
+        "purpose": "PurposePurpose details"
+    },
+    {
+        "description": "Create or update a MISP event with information from a phishing incident with a link",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_or_update_a_MISP_event_with_information_from_a_phishing_incident_with_a_link.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "48674c0e-1c31-4f4a-bfaa-86b9511081ac",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/1",
+        "purpose": "This playbook creates a new MISP event or completes an existing MISP event with details of a phishing incident.The playbook is triggered during the investigation of a phishing security incident. The playbook requires the phishing indicators such as the links, e-mail body, e-mail headers, e-mail subject and senders as input. It will then encode these values as attributes and objects in a MISP event. The playbook creates relationships between the objects and sets default tags (PAP, course-of-action matrix) and MISP clusters on event and attributes (contextualisation).The playbook queries (local) MISP events and OSINT feeds for matches with the indicators. You can use this information for correlation. URLscan is queried for the links included in the e-mail. The historical scan results and screenshots are imported in the playbook and MISP. Next to the enrichment via the scan results, the query at URLscan also provides IP and ASN information of the location where the URL is hosted. The URLs are submitted to Lookyloo for further analysis. The phishing URLs are also reported (manually) to Google, Microsoft and Phishtank. A final report with a list of indicators is summarised in the playbook and sent via chat to Mattermost. The results can also be added as an alert to TheHive."
+    }
+]

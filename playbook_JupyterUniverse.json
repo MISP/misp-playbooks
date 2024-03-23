@@ -1,0 +1,310 @@
+[
+    {
+        "description": "Create a custom MISP warninglist",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "warninglist",
+            "hunting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_custom_MISP_warninglist.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Using timestamps in MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "timestamp",
+            "export"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_using_timestamps_in_MISP.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Curation: disable decayed indicators",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "curation",
+            "workflow",
+            "todo",
+            "qa",
+            "quality",
+            "audit",
+            "decaying",
+            "indicators",
+            "lifecycle"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_curate_disable_decayed_indicators.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Retroscan with a MISP warninglist",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "warninglist",
+            "hunting",
+            "false-positives",
+            "indicator-quality",
+            "curation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_retroscan_with_MISP_warninglist.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Query CVE information",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "cve",
+            "vulnerability",
+            "exploits"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_cve_information.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Malware triage with MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "malware",
+            "triage",
+            "incidentresponse",
+            "ir",
+            "dfir"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_malware_triage.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Query hash information",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "hash",
+            "reputation",
+            "abuse",
+            "sample",
+            "file",
+            "malware"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_hash_information.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Query IP reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "ip",
+            "reputation",
+            "abuse",
+            "whois"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_ip_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Malware triage with MISP - Dynamic malware analysis",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "malware",
+            "triage",
+            "sandbox",
+            "incidentresponse",
+            "ir",
+            "dfir"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_malware_triage_upload_sample.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Query for inconsistencies in MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "distribution",
+            "data protection",
+            "curation",
+            "inconsistencies",
+            "qa",
+            "quality",
+            "audit"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_for_inconsistencies_misp_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Threat Actor profiling",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "mitre",
+            "actor",
+            "intrusion-set",
+            "galaxies",
+            "clusters",
+            "contextualisation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_threat_actor_profiling.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Curate MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "curation",
+            "workflow",
+            "todo",
+            "qa",
+            "quality",
+            "audit"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_curate_misp_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Provision users and organisations",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "users",
+            "organisations",
+            "training",
+            "provisioning"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_provision_users_organisations.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Create MISP objects and relationships",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "objects",
+            "context"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_MISP_objects_and_relationship.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Bulk delete MISP events",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "delete",
+            "clean",
+            "curation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_bulk_delete_events.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Query domain reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "domain",
+            "reputation"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_domain_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Playbook title",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "tags"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_skeleton.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Create or update a MISP event with information from a phishing incident with a link",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_or_update_a_MISP_event_with_information_from_a_phishing_incident_with_a_link.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    }
+]
