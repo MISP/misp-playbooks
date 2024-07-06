@@ -280,6 +280,24 @@
         ]
     },
     {
+        "description": "Query Elasticsearch for threat intelligence and report sightings in MISP and Mattermost",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "elastic",
+            "elasticsearch",
+            "monitoring",
+            "detection",
+            "sighting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_elasticsearch_matches_sightings.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
         "description": "Playbook title",
         "tags": [
             "misp",

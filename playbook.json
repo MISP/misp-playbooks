@@ -328,6 +328,27 @@
         "purpose": "This playbook queries the enabled OSINT feeds and the local MISP events for matches with one or more domain name(s). The playbook also queries URLscan for historical scans related to the domains and extracts the screenshots from URLscan. The playbook then uses the MISP modules to look up the DNS resolutions and queries VirusTotal, Shodan and URLhaus for information related to the domains. You can also specify additional entries (indicators or elements to be used for querying these sources). The playbook also looks up the known abuse contacts via abuse_finder. All this information is then included in a summary and send to Mattermost and TheHive."
     },
     {
+        "description": "Query Elasticsearch for threat intelligence and report sightings in MISP and Mattermost",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "elastic",
+            "elasticsearch",
+            "monitoring",
+            "detection",
+            "sighting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_elasticsearch_matches_sightings.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "168e0485-7fde-431a-ba7a-b8a215e4d394",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/",
+        "purpose": "This playbook queries Elasticsearch for matches with the results of a MISP search (indicators). The MISP search is configured by the analyst with a set of tags, mandatory tags and exclusion tags. Additional filtering can be done on attribute type. The search result is then a list of attributes which is used as a query to Elasticsearch. The query in Elasticsearch can be limited in time and capped on a maximum number of results. The results are then summarised in the playbook, added as sightings in MISP and a notification is sent to Mattermost."
+    },
+    {
         "description": "Playbook title",
         "tags": [
             "misp",
@@ -341,7 +362,7 @@
             "Koen Van Impe"
         ],
         "uuid": "UUID",
-        "issue": "https://github.com/MISP/misp-playbooks/issues/13",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/",
         "purpose": "PurposePurpose details"
     },
     {
