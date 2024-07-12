@@ -310,6 +310,30 @@
         "purpose": "A playbook to assist MISP users in doing bulk deletes of MISP events. Deletes are done for events created by organisations, for events before or after specific dates, published or unpublished events or for events with specific tags. A summary of the actions is printed and published on Mattermost."
     },
     {
+        "description": "JARM fingerprint investigations with Censys, Shodan and MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "jarm",
+            "fingerprint",
+            "tls",
+            "certificate",
+            "censys",
+            "shodan",
+            "investigation",
+            "infrastructure"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_jarm_verification.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "2e8acabf-c0a8-4d7c-803b-5d2aa0ea4359",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/19",
+        "purpose": "This playbook enables the investigation of JARM fingerprints which you can then use for threat actor infrastructure tracking. It verifies the existence of these fingerprints in MISP events and active OSINT feeds. The playbook then queries Censys and Shodan to identify hosts with services that match the fingerprints. The results are added to a MISP event as MISP objects and event reports. At the conclusion of the playbook, a summary is displayed and shared via Mattermost."
+    },
+    {
         "description": "Query domain reputation",
         "tags": [
             "misp",

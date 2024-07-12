@@ -265,6 +265,27 @@
         ]
     },
     {
+        "description": "JARM fingerprint investigations with Censys, Shodan and MISP",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "jarm",
+            "fingerprint",
+            "tls",
+            "certificate",
+            "censys",
+            "shodan",
+            "investigation",
+            "infrastructure"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_jarm_verification.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
         "description": "Query domain reputation",
         "tags": [
             "misp",
