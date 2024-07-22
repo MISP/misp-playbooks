@@ -101,6 +101,27 @@
         "purpose": "This playbook queries the MISP events for the use of specific CVEs. It lists the events with the context (galaxies) that are attached to the event. The playbook queries public sources (CVE search, vulners, XForceExchange, exploitdb) for additional CVE information. The results are stored in the playbook, in a MISP event and sent to Mattermost and TheHive."
     },
     {
+        "description": "Create a MISP event from Microsoft Sentinel security incidents",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "sentinel",
+            "siem",
+            "monitoring",
+            "detection",
+            "microsoft"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_event_from_sentinel_incidents.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "00ba33ee-1402-4669-ad0b-fef256a36870",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/34",
+        "purpose": "This playbook extracts information from Microsoft Sentinel security incidents, parses the associated alerts and entities, and extracts useful indicators. A new MISP event is created with the incident summary, and the indicators are added to the MISP event. Sightings are also added to the indicators. At the end of the playbook, a summary is displayed and shared via Mattermost. The playbook uses credentials (tokens) obtained through an Azure App. Additionally, it includes a section on uploading custom logs to Sentinel, which was used during development and can be relevant for other purposes."
+    },
+    {
         "description": "Malware triage with MISP",
         "tags": [
             "misp",

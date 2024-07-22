@@ -86,6 +86,24 @@
         ]
     },
     {
+        "description": "Create a MISP event from Microsoft Sentinel security incidents",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "sentinel",
+            "siem",
+            "monitoring",
+            "detection",
+            "microsoft"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_event_from_sentinel_incidents.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
         "description": "Malware triage with MISP",
         "tags": [
             "misp",
