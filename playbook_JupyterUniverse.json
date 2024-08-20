@@ -1,5 +1,23 @@
 [
     {
+        "description": "Query Timesketch for threat intelligence and report sightings in MISP and Mattermost",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "timesketch",
+            "forensic",
+            "monitoring",
+            "detection",
+            "sighting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_timesketch_search_query_sightings.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
         "description": "Create a custom MISP warninglist",
         "tags": [
             "misp",
@@ -332,6 +350,24 @@
             "sighting"
         ],
         "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_elasticsearch_matches_sightings.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "Geolocate IP addresses and calculate distance",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "geolocation",
+            "fingerprint",
+            "geoint",
+            "mmdb",
+            "infrastructure"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_geolocate_ip_and_calc_distance.ipynb",
         "authors": [
             "Koen Van Impe"
         ]

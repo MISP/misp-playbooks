@@ -1,5 +1,26 @@
 [
     {
+        "description": "Query Timesketch for threat intelligence and report sightings in MISP and Mattermost",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "timesketch",
+            "forensic",
+            "monitoring",
+            "detection",
+            "sighting"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_timesketch_search_query_sightings.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "f4a7ccf3-6ca0-4707-bb1a-bd5f61610efc",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/6",
+        "purpose": "This playbook queries Timesketch for matches based on MISP search results (indicators). The MISP search is configured by the analyst with mandatory tags, exclusion tags, and optional attribute type filters. The resulting attributes are then used to query Timesketch. You can limit the results and save the search in Timesketch. The results are summarised in the playbook, added as sightings in MISP, and sent as a notification to Mattermost. As an extra, there's a sample Bash script for importing EVTX files (e.g., from https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES)"
+    },
+    {
         "description": "Create a custom MISP warninglist",
         "tags": [
             "misp",
@@ -394,6 +415,27 @@
         "purpose": "This playbook queries Elasticsearch for matches with the results of a MISP search (indicators). The MISP search is configured by the analyst with a set of tags, mandatory tags and exclusion tags. Additional filtering can be done on attribute type. The search result is then a list of attributes which is used as a query to Elasticsearch. The query in Elasticsearch can be limited in time and capped on a maximum number of results. The results are then summarised in the playbook, added as sightings in MISP and a notification is sent to Mattermost."
     },
     {
+        "description": "Geolocate IP addresses and calculate distance",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "geolocation",
+            "fingerprint",
+            "geoint",
+            "mmdb",
+            "infrastructure"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_geolocate_ip_and_calc_distance.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "81ba2210-5052-49f4-9d6a-41d42d28ca45",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/20",
+        "purpose": "This playbook gets the IP addresess in a MISP event (ip-src and ip-dst). It then queries for the geolocation of these addresses via MMDB, puts them on a map and calculates the distance between coordinates with the help of Geopy. The map is attached as a screenshot to the MISP event, the findings are added as a MISP report, stored in the playbook and sent to Mattermost."
+    },
+    {
         "description": "Playbook title",
         "tags": [
             "misp",
@@ -407,7 +449,7 @@
             "Koen Van Impe"
         ],
         "uuid": "UUID",
-        "issue": "https://github.com/MISP/misp-playbooks/issues/",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/20",
         "purpose": "PurposePurpose details"
     },
     {
