@@ -15,6 +15,7 @@ This repository contains the documentation to get started with MISP playbooks.
 - The [MISP playbook technical documentation](documentation/MISP%20playbook%20technical%20documentation.md) helps you with setting up your environment to run the playbooks.
 - The [MISP playbook FAQ](documentation/MISP%20playbook%20FAQ.md) contains tips and tricks for using and developing playbooks.
 - A guide to install [MISP playbooks on Kali Linux in Azure](documentation/MISP%20playbook%20on%20Kali.md)
+- Conversion between [MISP playbooks and CACAO security playbooks](documentation/MISP_CACAO.md)
 
 ## Playbooks
 
