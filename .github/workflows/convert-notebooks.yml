@@ -24,9 +24,13 @@ jobs:
         run: |
           mkdir -p output
           jupyter nbconvert --to html misp-playbooks/*.ipynb --output-dir output
-
+          
+      - name: List files for debugging
+        run: ls -R output
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: output
+          keepFiles: true
