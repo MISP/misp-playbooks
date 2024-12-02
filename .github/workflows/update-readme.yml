@@ -21,22 +21,24 @@ jobs:
         git config user.email "actions@github.com"
         git pull --rebase origin main
 
-    - name: Clean up untracked files
-      run: |
-        git clean -fd
-        git pull origin main
+    - name: Debug README content
+      run: cat README.md
 
     - name: Update README references
       run: |
         README_FILE="README.md"
         if [ -f "$README_FILE" ]; then
-          sed -i 's|\(misp-playbooks/.*\)\.ipynb|\1.html|g' "$README_FILE"
+          sed -i 's|\(misp-playbooks/[^ )]*\)\.ipynb|\1.html|g' "$README_FILE"
         fi
 
     - name: Stage and commit changes
       run: |
         git add README.md
-        git commit -m "Update README links to HTML files"
-        git push
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Update README links to HTML files"
+          git push
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
