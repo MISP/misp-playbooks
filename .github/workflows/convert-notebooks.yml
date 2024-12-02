@@ -29,14 +29,16 @@ jobs:
         mkdir -p html-notebooks
         find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html --output-dir=html-notebooks {} +
 
-    - name: Commit and push changes
+    - name: Stage and commit changes
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        cp -r html-notebooks/* misp-playbooks/
-        git add misp-playbooks/*.html
-        git add README.md
-        git commit -m "Auto-convert notebooks to HTML and update README"
-        git push
+        git add -A  # Add all changes, including untracked files
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Auto-convert notebooks to HTML"
+          git push
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
