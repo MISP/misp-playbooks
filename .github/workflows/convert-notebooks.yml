@@ -4,33 +4,46 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
-  build:
+  convert-notebooks:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-      - name: Install nbconvert
-        run: pip install nbconvert
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install nbconvert
 
-      - name: Convert Notebooks to HTML
-        run: |
-          mkdir -p output
-          jupyter nbconvert --to html misp-playbooks/*.ipynb --output-dir output
-          
-      - name: List files for debugging
-        run: ls -R output
-        
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: output
-          keepFiles: true
+    - name: Convert Jupyter notebooks to HTML
+      run: |
+        mkdir -p html-notebooks
+        find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html --output-dir=html-notebooks {} +
+
+    - name: Update README references
+      run: |
+        README_FILE="README.md"
+        if [ -f "$README_FILE" ]; then
+          sed -i 's|\(misp-playbooks/.*\)\.ipynb|\1.html|g' "$README_FILE"
+        fi
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        cp -r html-notebooks/* misp-playbooks/
+        git add misp-playbooks/*.html
+        git add README.md
+        git commit -m "Auto-convert notebooks to HTML and update README"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
