@@ -21,6 +21,11 @@ jobs:
         git config user.email "actions@github.com"
         git pull --rebase origin main
 
+    - name: Clean up untracked files
+      run: |
+        git clean -fd
+        git pull origin main
+
     - name: Update README references
       run: |
         README_FILE="README.md"
@@ -28,7 +33,7 @@ jobs:
           sed -i 's|\(misp-playbooks/.*\)\.ipynb|\1.html|g' "$README_FILE"
         fi
 
-    - name: Commit and push updated README
+    - name: Stage and commit changes
       run: |
         git add README.md
         git commit -m "Update README links to HTML files"
