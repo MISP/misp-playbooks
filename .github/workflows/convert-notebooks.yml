@@ -29,13 +29,6 @@ jobs:
         mkdir -p html-notebooks
         find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html --output-dir=html-notebooks {} +
 
-    - name: Update README references
-      run: |
-        README_FILE="README.md"
-        if [ -f "$README_FILE" ]; then
-          sed -i 's|\(misp-playbooks/.*\)\.ipynb|\1.html|g' "$README_FILE"
-        fi
-
     - name: Commit and push changes
       run: |
         git config user.name "GitHub Actions"
