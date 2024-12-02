@@ -1,0 +1,33 @@
+name: Update README Links
+
+on:
+  workflow_run:
+    workflows:
+      - pages-build-deployment
+    types:
+      - completed
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Update README references
+      run: |
+        README_FILE="README.md"
+        if [ -f "$README_FILE" ]; then
+          sed -i 's|\(misp-playbooks/.*\)\.ipynb|\1.html|g' "$README_FILE"
+        fi
+
+    - name: Commit and push updated README
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update README links to HTML files"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
