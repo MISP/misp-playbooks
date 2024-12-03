@@ -10,12 +10,12 @@ The MISP playbooks are built with Jupyter notebooks and contain
 
 This repository contains the documentation to get started with MISP playbooks.
 
-- The [MISP playbook structure](documentation/MISP%20playbook%20structure.md) and [Jupyter notebook example](documentation/MISP%20playbook.ipynb) describe the structure of the MISP playbooks.
-- The [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.md) help you with building and maintaining your playbooks.
-- The [MISP playbook technical documentation](documentation/MISP%20playbook%20technical%20documentation.md) helps you with setting up your environment to run the playbooks.
-- The [MISP playbook FAQ](documentation/MISP%20playbook%20FAQ.md) contains tips and tricks for using and developing playbooks.
-- A guide to install [MISP playbooks on Kali Linux in Azure](documentation/MISP%20playbook%20on%20Kali.md)
-- Conversion between [MISP playbooks and CACAO security playbooks](documentation/MISP_CACAO.md)
+- The [MISP playbook structure](documentation/MISP%20playbook%20structure.html) and [Jupyter notebook example](documentation/MISP%20playbook.html) describe the structure of the MISP playbooks.
+- The [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.html) help you with building and maintaining your playbooks.
+- The [MISP playbook technical documentation](documentation/MISP%20playbook%20technical%20documentation.html) helps you with setting up your environment to run the playbooks.
+- The [MISP playbook FAQ](documentation/MISP%20playbook%20FAQ.html) contains tips and tricks for using and developing playbooks.
+- A guide to install [MISP playbooks on Kali Linux in Azure](documentation/MISP%20playbook%20on%20Kali.html)
+- Conversion between [MISP playbooks and CACAO security playbooks](documentation/MISP_CACAO.html)
 
 ## Playbooks
 
@@ -48,7 +48,7 @@ The repository contains these playbooks
 | **Provision users and organisations** | This playbook **creates users** and organisations with PyMISP. It also shows how to reset a password and delete or disable users. It includes an example how to get the user logs and how to create large number of users at once.|[MISP Playbook](misp-playbooks/pb_provision_users_organisations.html)<br><br>[MISP Playbook with output](misp-playbooks/pb_provision_users_organisations-with_output.html)|[43](https://github.com/MISP/misp-playbooks/issues/43)|
 | **Bulk delete MISP events** | A playbook to assist MISP users in doing **bulk deletes** of MISP events. Deletes are done for events created by **organisations**, for events before or after specific **dates**, **published** or unpublished events or for events with specific **tags**. A summary of the actions is printed and published on Mattermost.|[MISP Playbook](misp-playbooks/pb_bulk_delete_events.html)<br><br>[MISP Playbook with output](misp-playbooks/pb_bulk_delete_events-with_output.html)|[29](https://github.com/MISP/misp-playbooks/issues/29)|
 | **Jupyterthon 2024 MISP playbook** | A playbook to demonstrate MISP playbooks at Jupyterthon 2024|[MISP Playbook](misp-playbooks/Jupyterthon2024-MISP_playbooks.html)|[51](https://github.com/MISP/misp-playbooks/issues/51)|
-| **Skeleton MISP playbook** | This playbook can be used as a skeleton (or **template**) to start new MISP playbooks.| Use [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.md) to create a new MISP playbook.| |
+| **Skeleton MISP playbook** | This playbook can be used as a skeleton (or **template**) to start new MISP playbooks.| Use [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.html) to create a new MISP playbook.| |
   
 ## Requesting new playbooks
 

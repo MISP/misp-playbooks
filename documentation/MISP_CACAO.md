@@ -52,7 +52,7 @@ The script `cacao_playbook_to_misp_playbook.py`, also located in the [tools dire
 python cacao_playbook_to_misp_playbook.py malware_triage.json misp-playbooks/custom/malware_triage.html
 ```
 
-The result is a Jupyter notebook file (`.ipynb`) that can be used as a starting point to build your MISP playbook. Note that this conversion does not include the MISP introductory section (setting up MISP connectivity, loading modules, etc.) and assumes that the CACAO playbook is **linear**.
+The result is a Jupyter notebook file (`.html`) that can be used as a starting point to build your MISP playbook. Note that this conversion does not include the MISP introductory section (setting up MISP connectivity, loading modules, etc.) and assumes that the CACAO playbook is **linear**.
 
 # MISP Objects
 

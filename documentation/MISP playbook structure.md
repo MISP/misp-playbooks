@@ -58,7 +58,7 @@ The introduction must be present. It exists as one or more notebook cells in **M
 - *optional* **External resources** 
 - - a text block with the references to the external resources (such as 'VirusTotal', 'Shodan') required by the playbook.
 - *optional* **Tags** 
-- - Tags are used to classify the notebook and are provided as a list. They may use the format of MISP tags and [taxonomies](https://github.com/MISP/misp-rfc/blob/main/misp-taxonomy-format/raw.md.txt).
+- - Tags are used to classify the notebook and are provided as a list. They may use the format of MISP tags and [taxonomies](https://github.com/MISP/misp-rfc/blob/main/misp-taxonomy-format/raw.html.txt).
 - *required* **Purpose**
 - *optional* **Target audience**
 - *optional* **Graphical workflow**
