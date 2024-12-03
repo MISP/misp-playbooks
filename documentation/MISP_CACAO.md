@@ -21,7 +21,7 @@ The script `misp_playbook_to_cacao_playbook.py`, located in the [tools directory
 After the conversion, it verifies that the output complies with the [CACAO JSON schema](https://github.com/oasis-open/cacao-json-schemas). For example, the command below converts the MISP playbook for malware triage into a CACAO security playbook.
 
 ```
-python misp_playbook_to_cacao_playbook.py misp-playbooks/misp-playbooks/pb_malware_triage.ipynb cacao_malware_triage.json
+python misp_playbook_to_cacao_playbook.py misp-playbooks/misp-playbooks/pb_malware_triage.html cacao_malware_triage.json
 ```
 
 The conversion takes about 5 to 10 seconds and the result is a JSON file, which can be used in the tools designed to manage CACAO playbooks, such as [CACAO Roaster](https://github.com/opencybersecurityalliance/cacao-roaster).
@@ -49,7 +49,7 @@ The script `cacao_playbook_to_misp_playbook.py`, also located in the [tools dire
 - The **output** MISP playbook.
 
 ```
-python cacao_playbook_to_misp_playbook.py malware_triage.json misp-playbooks/custom/malware_triage.ipynb
+python cacao_playbook_to_misp_playbook.py malware_triage.json misp-playbooks/custom/malware_triage.html
 ```
 
 The result is a Jupyter notebook file (`.ipynb`) that can be used as a starting point to build your MISP playbook. Note that this conversion does not include the MISP introductory section (setting up MISP connectivity, loading modules, etc.) and assumes that the CACAO playbook is **linear**.
