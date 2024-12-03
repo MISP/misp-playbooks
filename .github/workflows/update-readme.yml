@@ -1,4 +1,4 @@
-name: Update README Links
+name: Update README and Documentation Links
 
 on:
   workflow_run:
@@ -8,7 +8,7 @@ on:
       - completed
 
 jobs:
-  update-readme:
+  update-links:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,23 +21,31 @@ jobs:
         git config user.email "actions@github.com"
         git pull --rebase origin main
 
-    - name: Debug README content
-      run: cat README.md
-
-    - name: Update README references
+    - name: Update README and documentation links
       run: |
+        # Update links in README.md
         README_FILE="README.md"
         if [ -f "$README_FILE" ]; then
           sed -i 's|\(misp-playbooks/[^ )]*\)\.ipynb|\1.html|g' "$README_FILE"
+          sed -i 's|\(misp-playbooks/[^ )]*\)\.md|\1.html|g' "$README_FILE"
+        fi
+
+        # Update links in markdown files in documentation folder
+        DOCS_DIR="documentation"
+        if [ -d "$DOCS_DIR" ]; then
+          find "$DOCS_DIR" -name '*.md' -type f | while read -r file; do
+            sed -i 's|\(misp-playbooks/[^ )]*\)\.ipynb|\1.html|g' "$file"
+            sed -i 's|\(misp-playbooks/[^ )]*\)\.md|\1.html|g' "$file"
+          done
         fi
 
     - name: Stage and commit changes
       run: |
-        git add README.md
+        git add README.md documentation/*.md
         if git diff --cached --quiet; then
           echo "No changes to commit."
         else
-          git commit -m "Update README links to HTML files"
+          git commit -m "Update links to HTML files in README and documentation"
           git push
         fi
       env:
