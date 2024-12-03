@@ -26,16 +26,16 @@ jobs:
         # Update links in README.md
         README_FILE="README.md"
         if [ -f "$README_FILE" ]; then
-          sed -i 's|\(misp-playbooks/[^ )]*\)\.ipynb|\1.html|g' "$README_FILE"
-          sed -i 's|\(misp-playbooks/[^ )]*\)\.md|\1.html|g' "$README_FILE"
+          sed -i 's|\([^ )]*\)\.ipynb|\1.html|g' "$README_FILE"                 
+          sed -i 's|\([^ )]*\)\.md|\1.html|g' "$README_FILE"
         fi
 
         # Update links in markdown files in documentation folder
         DOCS_DIR="documentation"
         if [ -d "$DOCS_DIR" ]; then
           find "$DOCS_DIR" -name '*.md' -type f | while read -r file; do
-            sed -i 's|\(misp-playbooks/[^ )]*\)\.ipynb|\1.html|g' "$file"
-            sed -i 's|\(misp-playbooks/[^ )]*\)\.md|\1.html|g' "$file"
+            sed -i 's|\([^ )]*\)\.ipynb|\1.html|g' "$file"
+            sed -i 's|\([^ )]*\)\.md|\1.html|g' "$file"
           done
         fi
 
