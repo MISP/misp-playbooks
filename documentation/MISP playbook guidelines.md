@@ -53,7 +53,7 @@ A [Jupyter notebook](https://jupyter.org/) is an open-source interactive environ
 
 Jupyter notebooks comes in different flavours. Whereas **Jupyter Notebook** is the classic, traditional, notebook interface, **JupyterLab** is the latest web-based environment for notebooks. Contrary to the classic interface, the JupyterLab interface has a simple **file browser** that makes navigating between different notebooks easier and it also comes with a visual **debugger** that allows you to set breakpoints and inspect variables. In general notebooks can be run in the classic Jupyter Notebook interface as well as in the JupyterLab interface. The MISP playbooks are tested and developed in JupyterLab but should also work in the classic Notebook interface.
 
-There's more information on Jupyter Notebook, JupyterLab and JupyterHub in the [MISP Playbook technical documentation](MISP%20playbook%20technical%20documentation.m)
+There's more information on Jupyter Notebook, JupyterLab and JupyterHub in the [MISP Playbook technical documentation](MISP%20playbook%20technical%20documentation.md)
 
 ## PyMISP
 
