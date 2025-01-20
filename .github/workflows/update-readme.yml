@@ -24,7 +24,7 @@ jobs:
     - name: Update README and documentation links
       run: |
         # Update links in README.md
-        README_FILE="README.md"
+        README_FILE="index.html"
         if [ -f "$README_FILE" ]; then
           sed -i 's|\([^ )]*\)\.ipynb|\1.html|g' "$README_FILE"                 
           sed -i 's|\([^ )]*\)\.md|\1.html|g' "$README_FILE"
@@ -33,7 +33,7 @@ jobs:
         # Update links in markdown files in documentation folder
         DOCS_DIR="documentation"
         if [ -d "$DOCS_DIR" ]; then
-          find "$DOCS_DIR" -name '*.md' -type f | while read -r file; do
+          find "$DOCS_DIR" -name '*.html' -type f | while read -r file; do
             sed -i 's|\([^ )]*\)\.ipynb|\1.html|g' "$file"
             sed -i 's|\([^ )]*\)\.md|\1.html|g' "$file"
           done
