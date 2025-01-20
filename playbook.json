@@ -228,6 +228,25 @@
         "purpose": "This playbook extends the results retrieved with static malware analysis in the (https://github.com/MISP/misp-playbooks/blob/main/misp-playbooks/pb_malware_triage.ipynb) playbook and does the dynamic malware analysis with one or more malware sandboxes. The results are stored in a MISP report and sent to Mattermost."
     },
     {
+        "description": "Query URL reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "url",
+            "reputation",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_url_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "432b6b97-6351-4c82-a497-80fa0d03af04",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/14",
+        "purpose": ""
+    },
+    {
         "description": "Query for inconsistencies in MISP events",
         "tags": [
             "misp",
@@ -468,5 +487,24 @@
         "uuid": "48674c0e-1c31-4f4a-bfaa-86b9511081ac",
         "issue": "https://github.com/MISP/misp-playbooks/issues/1",
         "purpose": "This playbook creates a new MISP event or completes an existing MISP event with details of a phishing incident.The playbook is triggered during the investigation of a phishing security incident. The playbook requires the phishing indicators such as the links, e-mail body, e-mail headers, e-mail subject and senders as input. It will then encode these values as attributes and objects in a MISP event. The playbook creates relationships between the objects and sets default tags (PAP, course-of-action matrix) and MISP clusters on event and attributes (contextualisation).The playbook queries (local) MISP events and OSINT feeds for matches with the indicators. You can use this information for correlation. URLscan is queried for the links included in the e-mail. The historical scan results and screenshots are imported in the playbook and MISP. Next to the enrichment via the scan results, the query at URLscan also provides IP and ASN information of the location where the URL is hosted. The URLs are submitted to Lookyloo for further analysis. The phishing URLs are also reported (manually) to Google, Microsoft and Phishtank. A final report with a list of indicators is summarised in the playbook and sent via chat to Mattermost. The results can also be added as an alert to TheHive."
+    },
+    {
+        "description": "URL remediation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "url",
+            "remediation",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_url_remediation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ],
+        "uuid": "94e81d43-0299-45d1-8cb9-5e27b37ff900",
+        "issue": "https://github.com/MISP/misp-playbooks/issues/16",
+        "purpose": ""
     }
 ]

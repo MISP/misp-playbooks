@@ -195,6 +195,22 @@
         ]
     },
     {
+        "description": "Query URL reputation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "url",
+            "reputation",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_query_url_reputation.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
         "description": "Query for inconsistencies in MISP events",
         "tags": [
             "misp",
@@ -396,6 +412,22 @@
             "phishing"
         ],
         "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_create_or_update_a_MISP_event_with_information_from_a_phishing_incident_with_a_link.ipynb",
+        "authors": [
+            "Koen Van Impe"
+        ]
+    },
+    {
+        "description": "URL remediation",
+        "tags": [
+            "misp",
+            "playbook",
+            "Threat Intel",
+            "IOC",
+            "url",
+            "remediation",
+            "phishing"
+        ],
+        "link": "https://github.com/MISP/misp-playbooks/blob/main//misp-playbooks/pb_url_remediation.ipynb",
         "authors": [
             "Koen Van Impe"
         ]
