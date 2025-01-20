@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7638,20 +7639,20 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialise Python environment</span>
-<span class="kn">import</span> <span class="nn">urllib3</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">prettytable</span> <span class="kn">import</span> <span class="n">PrettyTable</span><span class="p">,</span> <span class="n">MARKDOWN</span>
-<span class="kn">from</span> <span class="nn">pymisp</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prettytable</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrettyTable</span><span class="p">,</span> <span class="n">MARKDOWN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymisp</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="c1"># Load the credentials</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"../vault/"</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">keys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">keys</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="k">if</span> <span class="n">misp_verifycert</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">urllib3</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
     <span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">urllib3</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The </span><span class="se">\033</span><span class="s2">[92mPython libraries</span><span class="se">\033</span><span class="s2">[90m are loaded and the </span><span class="se">\033</span><span class="s2">[92mcredentials</span><span class="se">\033</span><span class="s2">[90m are read from the keys file."</span><span class="p">)</span>
 
@@ -7688,7 +7689,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Return a PrettyTable object with columns 'fields'</span>
-<span class="k">def</span> <span class="nf">eventstable</span><span class="p">(</span><span class="n">fields</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eventstable</span><span class="p">(</span><span class="n">fields</span><span class="p">):</span>
     <span class="n">table</span> <span class="o">=</span> <span class="n">PrettyTable</span><span class="p">()</span>
     <span class="n">table</span><span class="o">.</span><span class="n">field_names</span> <span class="o">=</span> <span class="n">fields</span>
     <span class="n">table</span><span class="o">.</span><span class="n">align</span><span class="p">[</span><span class="s2">"Event"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"l"</span>
@@ -7698,14 +7699,14 @@ a.anchor-link {
 
 
 <span class="c1"># Convert a UNIX timestamp to a human readable date format </span>
-<span class="k">def</span> <span class="nf">unix_timestamp_to_date</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">display_format</span><span class="o">=</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">unix_timestamp_to_date</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">display_format</span><span class="o">=</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">):</span>
     <span class="n">timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
     <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">display_format</span><span class="p">)</span>
 
 
 <span class="c1"># Convert a human readable date format to timestamp</span>
-<span class="k">def</span> <span class="nf">date_to_unix_timestamp</span><span class="p">(</span><span class="n">human_date</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">date_to_unix_timestamp</span><span class="p">(</span><span class="n">human_date</span><span class="p">):</span>
     <span class="n">dt_object</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">human_date</span><span class="p">,</span> <span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">timestamp</span> <span class="o">=</span> <span class="n">dt_object</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">timestamp</span>

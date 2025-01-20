@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7645,28 +7646,28 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialise Python environment</span>
-<span class="kn">import</span> <span class="nn">urllib3</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">pyfaup.faup</span> <span class="kn">import</span> <span class="n">Faup</span>
-<span class="kn">from</span> <span class="nn">prettytable</span> <span class="kn">import</span> <span class="n">PrettyTable</span><span class="p">,</span> <span class="n">MARKDOWN</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">display_markdown</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">uuid</span>
-<span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">uuid4</span>
-<span class="kn">from</span> <span class="nn">pymisp</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pymisp.tools</span> <span class="kn">import</span> <span class="n">GenericObjectGenerator</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyfaup.faup</span><span class="w"> </span><span class="kn">import</span> <span class="n">Faup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prettytable</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrettyTable</span><span class="p">,</span> <span class="n">MARKDOWN</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">display_markdown</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">uuid</span><span class="w"> </span><span class="kn">import</span> <span class="n">uuid4</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymisp</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymisp.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericObjectGenerator</span>
 
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># Load the credentials</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"../vault/"</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">keys</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">keys</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="k">if</span> <span class="n">misp_verifycert</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">urllib3</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
     <span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">urllib3</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"The </span><span class="se">\033</span><span class="s2">[92mPython libraries</span><span class="se">\033</span><span class="s2">[90m are loaded and the </span><span class="se">\033</span><span class="s2">[92mcredentials</span><span class="se">\033</span><span class="s2">[90m are read from the keys file."</span><span class="p">)</span>
 
@@ -7744,7 +7745,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">__includeFlattenedAttributes</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">__includeFlattenedAttributes</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Merge 'single' attributes and attributes part of an object into one list</span>
 <span class="sd">    '''</span>
@@ -7756,7 +7757,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
     <span class="k">return</span> <span class="n">event_attributes</span>
 
 
-<span class="k">def</span> <span class="nf">any_tag_present</span><span class="p">(</span><span class="n">element_tags</span><span class="p">,</span> <span class="n">required_tags</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">any_tag_present</span><span class="p">(</span><span class="n">element_tags</span><span class="p">,</span> <span class="n">required_tags</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Verify if any of the required_tags are present in the element_tags</span>
 <span class="sd">    '''</span>
@@ -7766,7 +7767,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
     <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">def</span> <span class="nf">todo_process_warninglist</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_process_warninglist</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Process the matches with a MISP warninglist</span>
 <span class="sd">    Disable to_ids and tag the attribute, except for URLs or domains</span>
@@ -7787,7 +7788,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
             <span class="nb">print</span><span class="p">(</span><span class="s2">"  Disabled to_ids for </span><span class="se">\033</span><span class="s2">[92m</span><span class="si">{}</span><span class="se">\033</span><span class="s2">[90m (</span><span class="si">{}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">[</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">attribute</span><span class="p">[</span><span class="s2">"uuid"</span><span class="p">]))</span>
 
 
-<span class="k">def</span> <span class="nf">todo_process_hashlookup</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_process_hashlookup</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Process the matches with Hashlookup</span>
 <span class="sd">    Disable to_ids and tag the attribute</span>
@@ -7810,7 +7811,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
             <span class="nb">print</span><span class="p">(</span><span class="s2">"  Disabled to_ids for </span><span class="se">\033</span><span class="s2">[92m</span><span class="si">{}</span><span class="se">\033</span><span class="s2">[90m (</span><span class="si">{}</span><span class="s2">)"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute</span><span class="p">[</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">attribute</span><span class="p">[</span><span class="s2">"uuid"</span><span class="p">]))</span>
 
 
-<span class="k">def</span> <span class="nf">todo_add_galaxycluster_on_ip</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_add_galaxycluster_on_ip</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Add a GalaxyCluster based on the location of the IP</span>
 <span class="sd">    '''</span>
@@ -7845,7 +7846,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
                 <span class="nb">print</span><span class="p">(</span><span class="s2">"  Add GalaxyCluster </span><span class="se">\033</span><span class="s2">[92m</span><span class="si">{}</span><span class="se">\033</span><span class="s2">[90m to </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">attribute</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]))</span>
 
 
-<span class="k">def</span> <span class="nf">todo_add_ttp</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_add_ttp</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Attempt to 'guess' the TTPs based on the event title</span>
 <span class="sd">    '''</span>
@@ -7859,7 +7860,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
             <span class="nb">print</span><span class="p">(</span><span class="s2">"  Add TTPs </span><span class="se">\033</span><span class="s2">[92m</span><span class="si">{}</span><span class="se">\033</span><span class="s2">[90m to </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">playbook_config</span><span class="p">[</span><span class="s2">"curation_tasks"</span><span class="p">][</span><span class="n">todo</span><span class="p">][</span><span class="s2">"associate_info"</span><span class="p">][</span><span class="n">associate_info</span><span class="p">],</span> <span class="n">event</span><span class="p">[</span><span class="s2">"info"</span><span class="p">]))</span>
 
 
-<span class="k">def</span> <span class="nf">todo_check_feed_overlap</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_check_feed_overlap</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Check for overlap with MISP feeds</span>
 <span class="sd">    '''</span>
@@ -8081,7 +8082,7 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">todo_process_fp</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">todo_process_fp</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">" Curation: false positives </span><span class="se">\033</span><span class="s2">[92m</span><span class="si">{}</span><span class="se">\033</span><span class="s2">[90m"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">todo</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">attribute</span><span class="p">[</span><span class="s2">"to_ids"</span><span class="p">]:</span>
@@ -8089,12 +8090,12 @@ mattermost_hook="&lt;MATTERMOST WEBHOOK&gt;"
             <span class="n">todo_process_hashlookup</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">todo_add_context</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_add_context</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
     <span class="n">todo_add_galaxycluster_on_ip</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
     <span class="n">todo_add_ttp</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">todo_additional_task</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">todo_additional_task</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">):</span>
     <span class="n">todo_check_feed_overlap</span><span class="p">(</span><span class="n">event_uuid</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
 
 
