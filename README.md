@@ -10,12 +10,12 @@ The MISP playbooks are built with Jupyter notebooks and contain
 
 This repository contains the documentation to get started with MISP playbooks.
 
-- The [MISP playbook structure](documentation/MISP%20playbook%20structure.html) and [Jupyter notebook example](documentation/MISP%20playbook.html) describe the structure of the MISP playbooks.
-- The [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.html) help you with building and maintaining your playbooks.
-- The [MISP playbook technical documentation](documentation/MISP%20playbook%20technical%20documentation.html) helps you with setting up your environment to run the playbooks.
-- The [MISP playbook FAQ](documentation/MISP%20playbook%20FAQ.html) contains tips and tricks for using and developing playbooks.
-- A guide to install [MISP playbooks on Kali Linux in Azure](documentation/MISP%20playbook%20on%20Kali.html)
-- Conversion between [MISP playbooks and CACAO security playbooks](documentation/MISP_CACAO.html)
+- The [MISP playbook structure](documentation/MISP%20playbook%20structure.md) and [Jupyter notebook example](documentation/MISP%20playbook.md) describe the structure of the MISP playbooks.
+- The [MISP playbook guidelines](documentation/MISP%20playbook%20guidelines.md) help you with building and maintaining your playbooks.
+- The [MISP playbook technical documentation](documentation/MISP%20playbook%20technical%20documentation.md) helps you with setting up your environment to run the playbooks.
+- The [MISP playbook FAQ](documentation/MISP%20playbook%20FAQ.md) contains tips and tricks for using and developing playbooks.
+- A guide to install [MISP playbooks on Kali Linux in Azure](documentation/MISP%20playbook%20on%20Kali.md)
+- Conversion between [MISP playbooks and CACAO security playbooks](documentation/MISP_CACAO.md)
 
 ## Playbooks
 
