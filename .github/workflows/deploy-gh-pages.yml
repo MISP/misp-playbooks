@@ -46,6 +46,6 @@ jobs:
         git config user.email "actions@github.com"
         git add --all  
         git commit -m "Deploy all files to GitHub Pages"
-        git push --force origin gh-pages
+        git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
