@@ -25,7 +25,7 @@ jobs:
     - name: Prepare documentation files
       run: |
         mkdir -p _site
-        cp -r doc/* _site/
+        cp -r * _site/
         
         # Convert markdown links from .md to .html
         find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
