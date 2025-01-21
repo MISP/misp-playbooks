@@ -43,6 +43,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
         branch: gh-pages
+        enable_jekyll: true 
         force_orphan: true  # Ensure gh-pages branch only contains docs
 
     #- name: Commit and push updated README
