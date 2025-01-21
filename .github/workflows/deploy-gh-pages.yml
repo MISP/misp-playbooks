@@ -26,16 +26,17 @@ jobs:
         cp -r config _site/
         cp -r tools _site/
         cp -r misp-playbooks _site/
-
-    - name: Ensure there is no '.nojekyll'
-      run: |
-        rm -f .nojekyll
       
     - name: Convert site
       run: |
         find -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
         find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
         find _site -type f -name "*.md" -exec sed -i 's/\.ipynb/\.html/g' {} \;        
+
+    - name: Theme
+      run: |
+        echo "remote_theme: pages-themes/cayman@v0.2.0" > _site/_config.yml
+        echo "remote_theme: pages-themes/cayman@v0.2.0" > _config.yml
         
     - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
