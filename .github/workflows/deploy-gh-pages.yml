@@ -1,0 +1,42 @@
+name: Deploy Documentation to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger only on changes to the main branch
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        pip install nbconvert
+
+    - name: Convert Jupyter notebooks to HTML
+      run: |
+        find doc/ -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
+
+    - name: Prepare documentation files
+      run: |
+        mkdir -p _site
+        cp -r doc/* _site/
+        
+        # Convert markdown links from .md to .html
+        find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
+        
+        # Rename markdown files to HTML
+        find _site -type f -name "*.md" -exec bash -c 'mv "$0" "${0%.md}.html"' {} \;
+
+    - name: Deploy to gh-pages branch
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
+        branch: gh-pages
+        force_orphan: true  # Ensure gh-pages branch only contains docs
