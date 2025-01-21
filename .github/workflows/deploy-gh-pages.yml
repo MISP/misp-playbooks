@@ -32,11 +32,20 @@ jobs:
         find -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
         find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
         
-    - name: Deploy to gh-pages branch
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site
-        branch: gh-pages
-        force_orphan: true  # Ensure gh-pages branch only contains docs
+    #- name: Deploy to gh-pages branch
+    #  uses: peaceiris/actions-gh-pages@v4
+    #  with:
+    #    github_token: ${{ secrets.GITHUB_TOKEN }}
+    #    publish_dir: ./_site
+    #    branch: gh-pages
+    #    force_orphan: true  # Ensure gh-pages branch only contains docs
 
+    - name: Commit and push updated README
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add README.md
+        git commit -m "Update pages"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
