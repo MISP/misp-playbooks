@@ -22,25 +22,16 @@ jobs:
       run: |
        find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
 
-    - name: Prepare documentation files
+    - name: Create index.html
       run: |
         mkdir -p _site
-        cp -r *.md _site/
-        cp -r config _site/
-        cp -r documentation _site/
-        cp -r misp-playbooks _site/
-        cp -r tools _site/
+        echo "hello" > _site/index.html
         
-        # Convert markdown links from .md to .html
-        find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
-        
-        # Rename markdown files to HTML
-        find _site -type f -name "*.md" -exec bash -c 'mv "$0" "${0%.md}.html"' {} \;
-
     - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
         branch: gh-pages
-        #force_orphan: true  # Ensure gh-pages branch only contains docs
+        force_orphan: true  # Ensure gh-pages branch only contains docs
+
