@@ -1,4 +1,4 @@
-name: Deploy Documentation to GitHub Pages
+name: Deploy documentation to GitHub Pages
 
 on:
   push:
@@ -27,10 +27,15 @@ jobs:
         cp -r tools _site/
         cp -r misp-playbooks _site/
 
+    - name: Ensure there is no '.nojekyll'
+      run: |
+        rm .nojekyll
+      
     - name: Convert site
       run: |
         find -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
         find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
+        find _site -type f -name "*.md" -exec sed -i 's/\.ipynb/\.html/g' {} \;        
         
     #- name: Deploy to gh-pages branch
     #  uses: peaceiris/actions-gh-pages@v4
