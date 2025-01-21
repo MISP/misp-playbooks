@@ -43,4 +43,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
         branch: gh-pages
-        force_orphan: true  # Ensure gh-pages branch only contains docs
+        #force_orphan: true  # Ensure gh-pages branch only contains docs
