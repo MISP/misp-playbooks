@@ -20,7 +20,7 @@ jobs:
 
     - name: Convert Jupyter notebooks to HTML
       run: |
-        find doc/ -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
+       find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
 
     - name: Prepare documentation files
       run: |
