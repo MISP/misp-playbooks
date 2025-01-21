@@ -25,7 +25,11 @@ jobs:
     - name: Prepare documentation files
       run: |
         mkdir -p _site
-        cp -r * _site/
+        cp -r *.md _site/
+        cp -r config _site/
+        cp -r documentation _site/
+        cp -r misp-playbooks _site/
+        cp -r tools _site/
         
         # Convert markdown links from .md to .html
         find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
