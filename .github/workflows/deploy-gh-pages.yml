@@ -18,14 +18,19 @@ jobs:
       run: |
         pip install nbconvert
 
-    - name: Convert Jupyter notebooks to HTML
-      run: |
-       find misp-playbooks -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
-
-    - name: Create index.html
+    - name: Copy site
       run: |
         mkdir -p _site
-        echo "hello" > _site/index.html
+        cp *.md _site/
+        cp -r documentation/* _site/
+        cp -r config/* _site/
+        cp -r tools/* _site/
+        cp -r misp-playbooks/* _site/
+
+    - name: Convert site
+      run: |
+        find -name "*.ipynb" -exec jupyter nbconvert --to html {} \;
+        find _site -type f -name "*.md" -exec sed -i 's/\.md/\.html/g' {} \;
         
     - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
