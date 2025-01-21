@@ -44,8 +44,8 @@ jobs:
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
-        git add README.md
-        git commit -m "Update pages"
-        git push
+        git add --all  
+        git commit -m "Deploy all files to GitHub Pages"
+        git push --force origin gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
