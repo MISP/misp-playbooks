@@ -22,10 +22,10 @@ jobs:
       run: |
         mkdir -p _site
         cp *.md _site/
-        cp -r documentation/* _site/
-        cp -r config/* _site/
-        cp -r tools/* _site/
-        cp -r misp-playbooks/* _site/
+        cp -r documentation _site/
+        cp -r config _site/
+        cp -r tools _site/
+        cp -r misp-playbooks _site/
 
     - name: Convert site
       run: |
