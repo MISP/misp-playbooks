@@ -49,7 +49,7 @@ These guidelines document best practices on creating and using Jupyter notebooks
 
 ## Jupyter Notebook
 
-A [Jupyter notebook](https://jupyter.org/) is an open-source interactive environment where users can write and **execute computer code**, observe the results of the code execution and combine the code with **text** (in Markdown) and **visualisations**. In essence it allows you to bundle code and documentation in one place. The computer code gets executed by what's called a *kernel* and for our playbooks we will be using **Python**. The editing of notebooks is mostly done via a web interface and notebooks are stored in a **JSON** format (for example [MISP playbook](MISP%20playbook.ipynb)). 
+A [Jupyter notebook](https://jupyter.org/) is an open-source interactive environment where users can write and **execute computer code**, observe the results of the code execution and combine the code with **text** (in Markdown) and **visualisations**. In essence it allows you to bundle code and documentation in one place. The computer code gets executed by what's called a *kernel* and for our playbooks we will be using **Python**. The editing of notebooks is mostly done via a web interface and notebooks are stored in a **JSON** format (for example [MISP playbook](MISP%20playbook.html)). 
 
 Jupyter notebooks comes in different flavours. Whereas **Jupyter Notebook** is the classic, traditional, notebook interface, **JupyterLab** is the latest web-based environment for notebooks. Contrary to the classic interface, the JupyterLab interface has a simple **file browser** that makes navigating between different notebooks easier and it also comes with a visual **debugger** that allows you to set breakpoints and inspect variables. In general notebooks can be run in the classic Jupyter Notebook interface as well as in the JupyterLab interface. The MISP playbooks are tested and developed in JupyterLab but should also work in the classic Notebook interface.
 
@@ -89,7 +89,7 @@ Always start a playbook with a self-explaining title and add the title as a top 
 
 To make your life simpler it's advised to use notebook file names without spaces. Most modern operating systems have no problem with spaces in file names, but some of the supporting tools or scripts do not always take spaces into account. Instead of spaces you can use an underscore (_).
 
-Also it is important to (re-)name a blank notebook immediately as JupyterLab will give an "Untitled.ipynb" name as default to all new notebooks.
+Also it is important to (re-)name a blank notebook immediately as JupyterLab will give an "Untitled.html" name as default to all new notebooks.
 
 The MISP playbooks in this repository all start with `pb_` and then the title of the playbook. Spaces in the title are replaced with an underscore.
 
@@ -151,7 +151,7 @@ Clearing the output is relatively easy in Jupyter Lab. Under the menu **Edit**, 
 You can also clear the output of all cells by using a command `jupyter` command from within the Python virtual environment that is used to execute the playbooks.
 
 ```
-jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace playbook.ipynb
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace playbook.html
 ```
 
 ### Version tracking of playbooks
@@ -186,7 +186,7 @@ If you do plan on modularising your code, it is advised to put these files in a 
 
 ```
 notebooks/
-  mynotebook.ipynb
+  mynotebook.html
 notebooks/modules
   module1.py
   module2.py

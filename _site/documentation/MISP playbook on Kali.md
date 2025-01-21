@@ -252,6 +252,6 @@ pip install -r documentation/requirements.txt
 
 # Test the environment
 
-The easiest way to test that your environment is setup correctly is by using a copy of the `pb_skeleton.ipynb` playbook. If you're able to start the playbook then you know that the JupyterLab environment is setup correctly. After that, run the playbook to check if your connection to MISP is functional and if you can access the local version of the MISP modules.
+The easiest way to test that your environment is setup correctly is by using a copy of the `pb_skeleton.html` playbook. If you're able to start the playbook then you know that the JupyterLab environment is setup correctly. After that, run the playbook to check if your connection to MISP is functional and if you can access the local version of the MISP modules.
 
 ![assets/kali-vm-7.png](assets/kali-vm-7.png)
