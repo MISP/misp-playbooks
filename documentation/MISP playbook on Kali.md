@@ -105,16 +105,7 @@ pip install pymisp jupyterlab notebook
 When playbooks are installed on a MISP server they can -in most cases- directly interact with the [MISP modules](https://github.com/MISP/misp-modules). In this setup, on a separate VM, we have to manually install the modules. The MISP modules are used to do enrichments and create MISP attributes and objects.  Install the Linux packages, clone the MISP modules repository and install the Python libraries for the modules in the same Python virtual environment used for the playbooks.
 
 ```
-sudo apt-get install python3-dev python3-pip libpq5 libjpeg-dev \
-      tesseract-ocr libpoppler-cpp-dev imagemagick virtualenv \
-      libopencv-dev zbar-tools libzbar0 libzbar-dev \
-      libfuzzy-dev build-essential -y
-
-git clone https://github.com/MISP/misp-modules.git
-cd misp-modules
-
-pip install -I -r REQUIREMENTS
-pip install .
+pip install misp-modules[all]
 ```
 
 Test if the MISP modules start correctly.
@@ -135,7 +126,7 @@ This should result in output similar to the one below.
 If the modules start correctly you can use the **systemd** script (an adjusted version from the MISP modules repository) to start the modules.
 
 ```
-sudo cp ../config/azureuser-misp-modules.service /etc/systemd/system/misp-modules.service
+sudo cp config/azureuser-misp-modules.service /etc/systemd/system/misp-modules.service
 sudo systemctl daemon-reload
 sudo systemctl enable --now misp-modules
 sudo service misp-modules start
@@ -148,7 +139,6 @@ sudo service misp-modules start
 The MISP playbook repository contains a basic Jupyter configuration file that you can use as a start to configure your environment. Move up one directory (assuming you were still in `misp-modules`). Create a configuration directory, copy the configuration file and create a directory for your notebooks.
 
 ```
-cd ..
 mkdir playbooks/config
 cp config/azureuser-misp-playbook-jupyter.py playbooks/config/misp-playbook-jupyter.py
 mkdir playbooks/my-playbooks
