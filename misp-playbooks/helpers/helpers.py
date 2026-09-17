@@ -79,7 +79,7 @@ def pb_get_urlscan(misp, urlscan_url, urlscan_apikey, urlscan_mapping, misp_even
                     except Exception as e:
                         print("asnname", e)
 
-            if "ip" in urlscan_mapping and "ip" in enriched and "ptr-record" in enriched:
+            if "ip" in urlscan_mapping and "ip" in enriched and "ptr" in enriched and enriched["ptr"] != False:
                 # First check if we already have this object
                 already_there = False
                 already_there_result = misp.search("objects", value=[enriched["ptr"], enriched["ip"]], eventid=misp_event.id, pythonify=True)                
